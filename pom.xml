@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.nynu</groupId>
+    <artifactId>springcloud</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+
+    <!--指定服务子模块-->
+    <modules>
+        <module>base</module>
+        <module>base-separation</module>
+        <module>commons</module>
+        <module>consumer1</module>
+        <module>geteway</module>
+    </modules>
+
+    <!--指定版本-->
+    <properties>
+
+        <!-- 指定JDK版本 -->
+        <java-jdk.version>1.8</java-jdk.version>
+
+        <!-- 指定SpringBoot版本 -->
+        <spring-boot.version>2.3.2.RELEASE</spring-boot.version>
+
+        <!-- 指定SpringCloud版本 -->
+        <spring-cloud.version>Hoxton.SR9</spring-cloud.version>
+
+        <!-- 指定SpringCloudAlibaba版本 -->
+        <spring-cloud-alibaba.version>2.2.6.RELEASE</spring-cloud-alibaba.version>
+
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- 声明依赖 springBoot -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 声明依赖 springCloud -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- 声明依赖 springCloudAlibaba -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+
+</project>
